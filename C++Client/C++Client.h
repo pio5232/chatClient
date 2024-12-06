@@ -8,4 +8,6 @@
 
 #pragma region MakePacket
 C_Network::NetworkErrorCode SendLogInPacket();
+C_Network::NetworkErrorCode SendRefreshRoomInfoPacket();
+C_Network::NetworkErrorCode SendMakeRoomPacket(WCHAR* roomName);
 #pragma endregion
