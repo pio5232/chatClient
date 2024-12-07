@@ -452,7 +452,7 @@ C_Network::NetworkErrorCode SendLogInPacket()
 
     chattingClient->Send(sendBuffer);
     
-    std::cout << "[LOG IN PACKET 전송]\n";
+    std::cout << "[로그인 전송]\n";
 
     return C_Network::NetworkErrorCode::NONE;
 }
@@ -469,7 +469,9 @@ C_Network::NetworkErrorCode SendRefreshRoomInfoPacket()
     C_Network::SharedSendBuffer roomListRequestSendBuffer = C_Network::ChattingServerPacketHandler::MakePacket<C_Network::PacketHeader>(roomListRequestPacket);
 
     chattingClient->Send(roomListRequestSendBuffer);
-    
+   
+    std::cout << "[방 새로고침 전송]\n";
+
     return C_Network::NetworkErrorCode::NONE;
 
 }
@@ -490,6 +492,8 @@ C_Network::NetworkErrorCode SendMakeRoomPacket(WCHAR* roomName)
     *sendBuffer << makeRoomRequestPacket;
 
     chattingClient->Send(sendBuffer);
+   
+    std::cout << "[방 생성 전송]\n";
 
     return C_Network::NetworkErrorCode();
 }
